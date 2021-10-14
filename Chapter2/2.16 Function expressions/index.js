@@ -49,3 +49,10 @@ callBack(false, a, b);
 callBack(true, function(){console.log("first");}, function(){console.log("second");});
 callBack(false, function(){console.log("first");}, function(){console.log("second");});
 
+//Function expressions:
+  //Can be called only after being defined
+
+//Function declarations:
+  //Can be called anywhere. A function call may happen before the function declaration
+  //unless in strict mode. Then the function can only be called within the scope it belongs to
+
