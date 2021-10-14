@@ -22,3 +22,30 @@ hello = print;
 //This will call the print function
 hello();
 
+//Callback functions - We can assign function to variables and use them as follows:
+
+function callBack(value, ifYes, ifNo)
+{
+	if(value == true)
+		ifYes();
+	else
+		ifNo();
+}
+
+function a()
+{
+	console.log("Hello");
+}
+
+function b()
+{
+	console.log("Goodbye");
+}
+
+callBack(true, a, b);
+callBack(false, a, b);
+
+//We can also use this for unnamed functions
+callBack(true, function(){console.log("first");}, function(){console.log("second");});
+callBack(false, function(){console.log("first");}, function(){console.log("second");});
+
