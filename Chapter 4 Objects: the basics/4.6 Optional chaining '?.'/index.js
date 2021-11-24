@@ -25,6 +25,29 @@ console.log(user?.name);
 console.log(user?.name?.first);
 
 //The optional chaining operator only allows the value before it to be null or underfined,
-//but does not guarantee anything afterwards. In the below example, user must exist, but
-//the name is optional
+//but does not guarantee anything afterwards (short-circuit). In the below example, user
+//must exist, but the name is optional
 console.log(user.name?.first);
+
+//There exists other variants of the ?. operator. '?.()' can be used for running functions
+//and '?.[]' can be used for expressions that would normally contain the '[]' operator
+
+let user2 = 
+{
+	name: "Andrew",
+	func()
+	{
+		console.log("Hello!");
+	}
+};
+
+let user3 = {};
+
+user2.func?.();
+user3.func?.();
+
+console.log(user2?.["name"]);
+console.log(user3?.["name"]);
+
+//We can also use '?.' with the delete operator. Below, we delete the name variable if it exists
+delete user2?.name;
