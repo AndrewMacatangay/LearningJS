@@ -1,4 +1,3 @@
-"use strict";
 //Unlike C++, we cannot overload operators objects. Instead, JavaScript will convert the
 //objects to primitives and then perform the operation on the primitives.
 
@@ -50,3 +49,20 @@ let inventory2 = factory(2, 5);
 console.log(String(inventory1));
 console.log(String(inventory2));
 console.log(inventory1 + inventory2);
+
+//We can also user Symbol.toPrimitive
+
+let bankAccount = 
+{
+	name: "Andrew",
+	balance: 11500,
+	[Symbol.toPrimitive](hint)
+	{
+		console.log(hint);
+		return hint == "string" ? this.name : this.balance;
+	}
+};
+
+console.log(bankAccount);
+console.log(+bankAccount);
+console.log(bankAccount + 500);
