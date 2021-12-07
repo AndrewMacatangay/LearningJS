@@ -39,3 +39,25 @@ console.log("Base-36: " + num.toString(36));
 console.log(42..toString(2));
 console.log((42).toString(2));
 
+//We can also round numbers to the nearest integer
+console.log(Math.floor(4.5));
+console.log(Math.ceil(4.5));
+console.log(Math.round(4.5));
+
+//We can also truncate the fractional component
+console.log(Math.trunc(4.5));
+
+//If we want to set the precision, we can either perform arithmetic operations or
+//use the Number method "toFixed". Keep in mind that toFixed returns a string, not
+//a number
+
+console.log(Math.round(3.14159265 * 1e2) / 1e2);
+console.log((3.14159265).toFixed(2));
+console.log((3.14).toFixed(5));
+
+//Loss of precision can happen when using arithmetic operations on floating point numbers.
+//Since some numbers cannot be precisely written in binary, and floating point numbers are
+//represented in binary, we may end up with an answer that is slightly off than what we want
+let fraction = 0.1 + 0.2;
+console.log(fraction);
+console.log(+fraction.toFixed(2));
