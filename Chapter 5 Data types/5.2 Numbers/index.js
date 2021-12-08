@@ -61,3 +61,21 @@ console.log((3.14).toFixed(5));
 let fraction = 0.1 + 0.2;
 console.log(fraction);
 console.log(+fraction.toFixed(2));
+
+//We can use isNaN() and isFinite() to verify if we have a number. All arguments will first
+//be convreted into a number if possible. The value NaN is unique from all othe NaN values.
+//Object.is() can be used to compare === for some edge cases
+
+console.log(isNaN("Infinity"));
+console.log(isFinite("Infinity"));
+console.log(Object.is(NaN, NaN));
+console.log(Object.is(0, -0));
+
+//parseInt and parseFloat can be used to extract the numeric part out of some value. Numeric
+//conversion using '+' or Number() can only be used strictly on values that can be converted
+console.log(parseInt("101.1.1"));
+console.log(parseFloat("101.1.1"));
+console.log(parseInt("a1"));
+console.log(parseInt("10101", 2));
+
+//Other functions utilitizing numbers can be found in the Math library.
