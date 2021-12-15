@@ -47,3 +47,58 @@ console.log(myString.charAt(10));
 //We can loop through the characters of a string like so:
 for(let x of myString)
 	console.log(x);
+
+//In JavaScript, string are immutable. We are not allowed to change a character within a string.
+//Instead, we can create another string assign it to the existing string
+let str = "Hello";
+console.log(str);
+str = str.substring(0, 4) + "u";
+console.log(str);
+
+//To change the letter casing, we can use toLowerCase() and toUpperCase()
+let str2 = "Andrew";
+console.log(str2);
+str2 = str2[0].toLowerCase() + str2.substring(1);
+console.log(str2);
+str2 = str2.toUpperCase();
+console.log(str2);
+str2 = str2.toLowerCase();
+console.log(str2);
+
+//Searching for a substring: We can use str.indexOf(), str.lastIndexOf(), str.includes(),
+//str.startsWith(), and str.endsWith()
+
+let str3 = "Hello, my name is Giorgio Giovanni";
+console.log(str3.indexOf("name"));
+console.log(str3.indexOf("Name"));
+
+//A second parameter can be used to start searching from a specified index
+//We can count all occurances of a substring as follows:
+
+let pos = -1;
+while((pos = str3.indexOf("G", pos + 1)) != -1)
+	console.log(pos);
+
+//We can also use str.lastIndexOf() to start from the back of the string
+console.log(str3.lastIndexOf("G"));
+console.log(str3.lastIndexOf("Hello"));
+
+//If we don't need an index, we can use the following methods which return a boolean:
+console.log(str3.includes("Hello"));
+console.log(str3.includes("hello"));
+console.log(str3.startsWith("H"));
+console.log(str3.endsWith("i"));
+
+//To get a substring, we can use str.substring(), str.substr(), and str.slice()
+let str4 = "Shes cold and shes cruel, but she knows what shes doing";
+console.log(str4.slice(1, 9));
+console.log(str4.slice(26));
+console.log(str4.slice(-str4.length));
+console.log(str4.substring(0, 9));
+console.log(str4.substring(9, 0));
+console.log(str4.substr(1, 8));
+
+//slice     [start, end)            allows negatives
+//substring [start, end)            negative values mean 0
+//substr    [start, start + length) allows negative start
+
