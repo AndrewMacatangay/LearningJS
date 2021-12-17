@@ -102,3 +102,13 @@ console.log(str4.substr(1, 8));
 //substring [start, end)            negative values mean 0
 //substr    [start, start + length) allows negative start
 
+//When comparing strings, they will be compared character-by-character
+
+//Lowercase have a higher ASCII value than uppercase letters, so the following is true:
+console.log("a" > "A");
+
+//To get the ASCII value of the character, we can do the following:
+console.log("a".codePointAt(0));
+
+//To get the character value of a number, we can do the following:
+console.log(String.fromCodePoint(97));
