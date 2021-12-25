@@ -36,3 +36,33 @@ console.log(arr.slice(1));
 console.log(arr.slice(1, 3));
 console.log(arr.slice(-1));
 console.log(arr.slice(-2, -1));
+
+//arr.concat() allows us to concatenate arrays or other values
+//Syntax: arr.concat(arg1, arg2, ..., argN);
+
+let arr1 = [1, 2];
+console.log(arr1.concat([3, 4]));
+console.log(arr1.concat([3, 4], [5, 6]));
+console.log(arr1.concat(3, 4));
+
+//If we want to concatenate an object that resembles an array, if whole object will be added
+//instead of it's contents
+
+let obj = 
+{
+	0: 1,
+	length: 1
+};
+
+console.log(arr1.concat(obj));
+
+//If we want to concatenate an objects attributes, we can add 'Symbol.isConcatSpreadable' as an attribute
+
+let obj2 = 
+{
+	0: 1,
+	length: 1,
+	[Symbol.isConcatSpreadable]: true
+};
+
+console.log(arr1.concat(obj2));
